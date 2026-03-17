@@ -1,0 +1,15 @@
+*.class
+bin/
+target/
+.metadata/
+.recommenders/
+.project
+.classpath
+.settings/
+.DS_Store
+output/
+*.mp4
+*.png
+*.csv
+execution_time.txt
+parameters_*.txt
