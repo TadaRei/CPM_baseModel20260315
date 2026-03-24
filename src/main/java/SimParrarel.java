@@ -14,8 +14,8 @@ public class SimParrarel {
 		// ★計測開始時刻を取得
         long startTime = System.currentTimeMillis();
 		
-		String folderName = "random_seed_" + (params.RAND_SEED);
-		folderName = timestampedFolder + "/" + folderName;
+		String subDirName = params.SWEEP_DIR_NAME.isEmpty()? "random_seed_" + params.RAND_SEED : params.SWEEP_DIR_NAME;
+		String folderName = timestampedFolder + "/" + subDirName;
 		OutputManager outputManager = new OutputManager(params, folderName);
 		outputManager.createOutputFolder();
 

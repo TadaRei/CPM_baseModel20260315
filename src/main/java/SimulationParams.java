@@ -18,6 +18,7 @@ public class SimulationParams {
     public String IMAGE_FILE_PREFIX;
     public String IMAGE_FILE_EXTENSION;
     public int CELL_SIZE;
+    public String SWEEP_DIR_NAME = "";
 
     // --- 細胞特性（CPMパラメータ） ---
     public int TARGET_AREA;
@@ -73,6 +74,7 @@ public class SimulationParams {
 
         this.IMAGE_FILE_PREFIX = source.IMAGE_FILE_PREFIX;
         this.IMAGE_FILE_EXTENSION = source.IMAGE_FILE_EXTENSION;
+        this.SWEEP_DIR_NAME = source.SWEEP_DIR_NAME;
 
         this.TARGET_AREA = source.TARGET_AREA;
         this.TARGET_PERIMETER = source.TARGET_PERIMETER;

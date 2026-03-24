@@ -175,9 +175,14 @@ class Grid {
 
         dE -= deltaAdhesionEnergy;
         
-        double dEPlus = dE;
+     // =========================================================
+        // TODO: [引き継ぎ用] 新しいエネルギー項（走化性や体積制約など）を追加する場所
+        // =========================================================
+        // params クラスに新しく定義した係数（K_CHEMOなど）を用いて差分エネルギーを計算し、dEに加算・減算してください。
+        // 例: dE += params.K_CHEMO * (targetChemo - sourceChemo);
         
-        //TODO ここに追加したい項を記入。dEPlusには追加項を含めた遷移前後のエネルギー差を代入
+        double dEPlus = dE;
+        // ※ dEPlus には最終的な遷移前後のエネルギー差を代入して返します。
         
         return new ChangeInfo(dE, dEPlus, dLs, dLt);
     }

@@ -186,6 +186,15 @@ public class SimulatorGPUParrarel implements ISimulator{
             if (tID > 0) dE += K_PERI * (sq(cellPerimeters[tID] + dLt - TARGET_PERIMETER) - sq(cellPerimeters[tID] - TARGET_PERIMETER));
             dE -= deltaAdhesionEnergy;
             
+         // =========================================================
+            // TODO: [引き継ぎ用] GPU計算での新しいエネルギー項の追加場所
+            // =========================================================
+            // 【重要】Aparapiの制約により、GPUカーネル内（ここ）では以下の操作が禁止されています。
+            // × new によるオブジェクト生成（PointやListなど）
+            // × 外部の複雑なメソッド呼び出し
+            // 追加の計算を行う場合は、事前に1次元配列としてデータをGPUメモリに転送しておき、
+            // プリミティブ型（int, float）のみを用いて dE に加算してください。
+            
             return dE;
         }
         
